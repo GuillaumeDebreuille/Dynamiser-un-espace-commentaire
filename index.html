@@ -64,7 +64,7 @@
           </div>          
         </div>
         <!-- FORM  -->
-        <form action="#" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+        <form action="#" method="POST" onsubmit="return validation()" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
           <div>
             <label for="first-name" class="block text-sm font-medium text-warm-gray-900">Prénom</label>
             <div class="mt-1">
@@ -96,5 +96,26 @@
     </div>
   </div>
 </div>
+
+<!--  DEBUT SCRIPT ERROR MESSAGE  -->
+<!--  Ajout ligne 67 : onsubmit="return validation()"  -->
+<script>
+  function validation() {
+    var firstName = document.getElementById("first-name").value;
+    var lastName = document.getElementById("last-name").value;
+    var message = document.getElementById("message").value;
+    var errorMessage = document.getElementById("error-message"); //ligne 52//
+
+    if (firstName == "" || lastName == "" || message == "") {
+      errorMessage.style.display = "block";
+      return false;
+    } else {
+      errorMessage.style.display = "none";
+      return true;
+    }
+  }
+</script>
+<!--  FIN SCRIPT ERROR MESSAGE  -->
+
 </body>
 </html>
