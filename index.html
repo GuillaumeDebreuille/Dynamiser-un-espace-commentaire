@@ -99,7 +99,9 @@
 
 
 <script>
-  // DEBUT SCRIPT - ERROR MESSAGE //
+  // ========== DEBUT DE LA FONCTION : AJOUT DE COMMENTAIRE ========== //
+
+  // DEBUT - ERROR MESSAGE //
   // Ajout ligne 67 : onsubmit="return validation()" //
   function validation() {
     var firstName = document.getElementById("first-name").value;
@@ -112,10 +114,10 @@
       return false;
     } else {
       errorMessage.style.display = "none";
-  // FIN SCRIPT - ERROR MESSAGE //
+  // FIN - ERROR MESSAGE //
 
 
-  // DEBUT SCRIPT - CREATION COMMENTAIRE //
+  // DEBUT - CREATION COMMENTAIRE //
     var newComment = document.createElement("div");
     var newCommentClass = 
     `<div class="flex space-x-4 text-sm text-gray-500">
@@ -130,19 +132,22 @@
 
     var commentList = document.getElementById("comment-list"); //LIGNE 17//
     commentList.appendChild(newComment);
-  // FIN SCRIPT - CREATION COMMENTAIRE //
+  // FIN - CREATION COMMENTAIRE //
 
 
-  // DEBUT SCRIPT - SUPPRIMER LE CONTENU DU FORMULAIRE //
+  // DEBUT - SUPPRIMER LE CONTENU DU FORMULAIRE //
         document.getElementById("first-name").value = "";
         document.getElementById("last-name").value = "";
         document.getElementById("message").value = "";
-  // FIN SCRIPT - SUPPRIMER LE CONTENU DU FORMULAIRE //
+  // FIN - SUPPRIMER LE CONTENU DU FORMULAIRE //
 
 
         return false;
     }
   }
+
+
+  // ========== FIN DE LA FONCTION : AJOUT DE COMMENTAIRE ========== //
 </script>
 
 
