@@ -97,9 +97,10 @@
   </div>
 </div>
 
-<!--  DEBUT SCRIPT ERROR MESSAGE  -->
-<!--  Ajout ligne 67 : onsubmit="return validation()"  -->
+
 <script>
+  // DEBUT SCRIPT - ERROR MESSAGE //
+  // Ajout ligne 67 : onsubmit="return validation()" //
   function validation() {
     var firstName = document.getElementById("first-name").value;
     var lastName = document.getElementById("last-name").value;
@@ -111,11 +112,39 @@
       return false;
     } else {
       errorMessage.style.display = "none";
-      return true;
+  // FIN SCRIPT - ERROR MESSAGE //
+
+
+  // DEBUT SCRIPT - CREATION COMMENTAIRE //
+    var newComment = document.createElement("div");
+    var newCommentClass = 
+    `<div class="flex space-x-4 text-sm text-gray-500">
+      <div class="flex-1 py-10 border-t border-gray-200">
+        <h3 class="font-medium text-gray-900"> ${firstName} ${lastName} </h3>
+          <div class="prose prose-sm mt-4 max-w-none text-gray-500">
+            <p> ${message} </p>
+          </div>
+      </div>`;
+
+    newComment.innerHTML = newCommentClass;
+
+    var commentList = document.getElementById("comment-list"); //LIGNE 17//
+    commentList.appendChild(newComment);
+  // FIN SCRIPT - CREATION COMMENTAIRE //
+
+
+  // DEBUT SCRIPT - SUPPRIMER LE CONTENU DU FORMULAIRE //
+        document.getElementById("first-name").value = "";
+        document.getElementById("last-name").value = "";
+        document.getElementById("message").value = "";
+  // FIN SCRIPT - SUPPRIMER LE CONTENU DU FORMULAIRE //
+
+
+        return false;
     }
   }
 </script>
-<!--  FIN SCRIPT ERROR MESSAGE  -->
+
 
 </body>
 </html>
